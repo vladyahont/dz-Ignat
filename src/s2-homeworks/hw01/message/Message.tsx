@@ -22,13 +22,11 @@ const Message = (props: MessagePropsType) => {
                 <div>
                 <img id={'hw1-avatar-' + props.message.id}
                     src={props.message.user.avatar}/>
-
                 </div>
             </div>
             <div id={'hw1-time-' + props.message.id} className={s.time}>
                 <p>{props.message.message.time}</p>
             </div>
-
         </div>
     )
 }
