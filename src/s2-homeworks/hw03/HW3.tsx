@@ -3,10 +3,6 @@ import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
 
-/*
-* 7 - в файле GreetingContainer.tsx дописать логику функций pureAddUser, pureOnBlur, pureOnEnter и проверить их тестами
-* 11 - сделать стили в соответствии с дизайном
-* */
 
 // types
 export type UserType = {
@@ -23,6 +19,7 @@ const HW3 = () => {
     const [users, setUsers] = useState <Array<UserType>>([]) // need to fix any
 
     const addUserCallback = (name: string) => { // need to fix any
+        console.log({name})
         pureAddUserCallback(name, setUsers, users)
     }
 

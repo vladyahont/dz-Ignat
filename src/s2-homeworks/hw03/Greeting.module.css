@@ -1,10 +1,13 @@
 .greetingForm {
+    display: flex;
+    align-items: flex-start;
 }
 
 .inputAndButtonContainer {
 }
 
 .error {
+    color: #cc0000;
 }
 
 .input {
