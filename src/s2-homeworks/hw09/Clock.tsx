@@ -38,6 +38,7 @@ function Clock() {
     const stringTime = new Intl.DateTimeFormat('ru', {
         hour: 'numeric',
         minute: 'numeric',
+        second: 'numeric'
     }).format(date) || <br/>// часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = new Intl.DateTimeFormat('ru').format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
@@ -85,7 +86,7 @@ function Clock() {
                 </SuperButton>
                 <SuperButton
                     id={'hw9-button-stop'}
-                    disabled={!!!timerId} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={!timerId} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
