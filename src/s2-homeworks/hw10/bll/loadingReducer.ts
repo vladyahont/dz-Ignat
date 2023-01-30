@@ -20,7 +20,6 @@ export const loadingReducer = (state = initState, action: LoadingActionType): in
     }
 }
 
-export const loadingAC = (isLoading: boolean): LoadingActionType => ({
-    type: 'CHANGE_LOADING',
-    isLoading,
-})
+export const loadingAC = (isLoading: boolean): LoadingActionType => {
+    return {type: 'CHANGE_LOADING', isLoading}
+}
