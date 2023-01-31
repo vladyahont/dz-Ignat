@@ -27,9 +27,9 @@ function HW11() {
                 <div className={s.container}>
                     <div className={s.wrapper}>
                         <span id={'hw11-value'} className={s.number}>{value1}</span>
-                        <SuperRange
-                            id={'hw11-single-slider'}
+                        <SuperRange id={'hw11-single-slider'}
                             // сделать так чтоб value1 изменялось // пишет студент
+
 
                         />
                     </div>
