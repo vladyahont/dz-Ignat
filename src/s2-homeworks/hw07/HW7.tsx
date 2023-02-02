@@ -19,6 +19,7 @@ const arr : {id: number; value: string}[] = [
 
 export const HW7 = () => {
     const [value, setValue] = useState(1) // селект и радио должны работать синхронно
+    const themeId = 0
 
     const onChangeOption =(value: string) => {
         setValue(+value)
@@ -36,6 +37,7 @@ export const HW7 = () => {
                             options={arr}
                             value={value}
                             onChangeOption={onChangeOption}
+                            themeId={themeId}
                         />
                     </div>
                     <div>
