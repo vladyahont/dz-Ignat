@@ -36,32 +36,30 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
-
                 setCode('Код 200!')
-                setText('Everything is fine)')
+                setText(res.data.errorText)
                 setImage(success200)
                 // дописать
                 setInfo('')
 
             })
             .catch((e) => {
-
                 // дописать
                 if (e.code === 'ERR_BAD_RESPONSE') {
                     setCode('Error 500!')
-                    setText(e.message)
+                    setText(e.response.data.errorText)
                     setImage(error500)
                     setInfo('')
                 }
                 if (e.code === 'ERR_BAD_REQUEST') {
                     setCode('Error 400!')
-                    setText(e.message)
+                    setText(e.response.data.errorText)
                     setImage(error400)
                     setInfo('')
                 }
                 if (e.code === 'ERR_NETWORK') {
                     setCode('Error Unknown!')
-                    setText(e.message)
+                    setText(e.response.data.errorText)
                     setImage(errorUnknown)
                     setInfo('')
                 }
