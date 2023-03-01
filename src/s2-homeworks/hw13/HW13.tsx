@@ -14,6 +14,8 @@ import errorUnknown from './images/error.svg'
 * 3 - сделать стили в соответствии с дизайном
 * */
 
+
+
 const HW13 = () => {
     const [code, setCode] = useState('')
     const [text, setText] = useState('')
@@ -34,13 +36,35 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
+
                 setCode('Код 200!')
+                setText('Everything is fine)')
                 setImage(success200)
                 // дописать
+                setInfo('')
 
             })
             .catch((e) => {
+
                 // дописать
+                if (e.code === 'ERR_BAD_RESPONSE') {
+                    setCode('Error 500!')
+                    setText(e.message)
+                    setImage(error500)
+                    setInfo('')
+                }
+                if (e.code === 'ERR_BAD_REQUEST') {
+                    setCode('Error 400!')
+                    setText(e.message)
+                    setImage(error400)
+                    setInfo('')
+                }
+                if (e.code === 'ERR_NETWORK') {
+                    setCode('Error Unknown!')
+                    setText(e.message)
+                    setImage(errorUnknown)
+                    setInfo('')
+                }
 
             })
     }
@@ -56,7 +80,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info !== ''}
                     >
                         Send true
                     </SuperButton>
@@ -65,7 +89,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info !== ''}
                     >
                         Send false
                     </SuperButton>
@@ -74,7 +98,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info !== ''}
                     >
                         Send undefined
                     </SuperButton>
@@ -83,7 +107,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info !== ''}
                     >
                         Send null
                     </SuperButton>
